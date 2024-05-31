@@ -16,7 +16,9 @@ Zvládnete projít všechny tři levely a zneškodnit všechny nepřátele???
 
 ## Ovládání hry
 Hra se ovládá úplně jednodušše. 
+
 POHYB - Ninja se pohybuje pomocí šípek, doprava, doleva a skok. 
+
 ÚTOK - Útok neboli tzv.dash se provádí pomocí zmáčknutí klávesy X a šipky, udávající směr, do kterého má ninja zaútočit. Po dobu jeho útoku je nesmrtelný a poté má krátký cooldown, aby nemohl útočit furt.
 
 ## Cíl hry
