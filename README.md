@@ -57,3 +57,63 @@ Optimalizoval jsem renderování pixelů, aktuálně se mi renderují jen pixely
 Nastudoval jsem si princip animací, jejich délku trvání, flipování podle osy X (jestli běžíme vlevo, či vpravo), že potřebujeme "rezervovat" větší místo pro frame běžícího panáčka, protože má nohy více do šířky.
 
 Přidal jsem si logiku animací pro ninju, pokud je ve vzduchu tak má animaci skoku, pokud není ve vzduchu ale pohybuje se po ose X, tak má animaci běhu, pokud nedělá ani jedno z toho, tak nemá animaci žádnou.
+
+### Update 8 (2 hodiny)
+
+Začal jsem vytvářet samotnou mapu. Pro tento účel jsem si založil map.json Json je lepší pro prácí se stringami ukládání a zpětné načítání věcí. 
+
+Založil jsem editor.py pro vytváření map, zároveň jsem se naučil inicializovat vstup myši (tlačítka a kolečko) i kombinovat písmena či myš se shiftem. Např. shift + kolečko myši scrolluje mezi variantama blocků. 
+
+### Update 9 (3 hodiny)
+
+Pokračuji ve vytváření editor.py pro vytváření map. 
+
+self.ongrid mi pokládá bloky na "grid", tj. skládá je vedle sebe jako blocky v Minecraftu(používá se primárně pro trávu a kameny), self.offgrid je pokládá , dle přesné polohy myši, mohou to být nepravidelné blocky jako např. stromy či květiny atd...
+
+V souboru tilemap.py jsem udělal autotile. Díky autotilu se mi skupina blocků porovná tak, že nahoře bude tráva a pod ní hlína. Stejně funguje pro kameny. Autotile strašně zjednodušuje tvorbu map.
+
+Udělal jsem particles.py, tento soubor se stará o particly (padající listy). Přidal jsem matiku a nastavil list, aby padal po sinusovce, toto vytváří mnohem reálnější pocit z padajícího listu než umělé násobení random.random() číslem.
+
+### Update 10 (4 hodiny)
+
+Omezil jsem skoky na 1 skok. Po dopadu na zem se vyresetuje a můžete zase skákat. 
+
+Nastavil jsem wall jump a wall slide. Při wall slidu klouže ninja pomaleji než padá normálně ze vzduchu. Může se také odrazit od zdi a skočit tak do určité vzdálenosti.
+
+Nastavil jsem DASH ninji na klávesu X. Zprovoznil jsem samotný dash, posledních 10 framů ninja zpomaluje, prvních 50 framů je "neviditelný". Zároveň těch 10 framů, kdy už ho můžeme vidět a ninja zpomaluje tak probíhá cooldown, abych nemohl dashovat ostošest.
+
+V prvnívh 50 framech, kdy ninja dashuje se mi vytváří tzv. "burst" z černých partuclů.
+
+V posledních 10 framech, kdy brzdí a zastavuje se tak se mi vytvoří 20 náhodných rychlostí a pozic pro spawn stejných černých particlů a toto dělá efekt "splashe", když ninja zastaví.
+
+Script se podívá do map a najde, kam jsem umístil spawnery, poté vyhodnotí jestli to je spawn ninji či enemáka  a spawne je na daných pozicích.
+
+Aby nám enemák nepadal přes okraje tak jsem mu napsala tuto podmínku "pokud je pod enemákem a ze šikma před ním solid tile jde dál, jestli ne, tak se otočí a jde na druhou stranu", fce solid_check soubor tilemap.py
+
+Přidal jsem mu zbraň, která se centruje podle souřadnic enemáka a také flipuje.
+
+### Update 11 (5 hodin)
+
+Přidal jsem projektil, který enemák střílí, když je ninja maximálně na 16 pixelů dleko od něj a na stejné souřadnici Y, zároveň musí být enemák natočen na stranu, kde je ninja.
+
+Projektil zmizí, když narazí do zdi, ninju nebo letí déle než 6 sekund.
+
+Založil jsem spark.py, aby to nebylo jen že střela imploduje, ale mělo to i vizualní efekt.
+
+Při nárazu střely do zdi, se vizuálně "odrazí".
+
+Při trefení ninjy se uděla vizuální "exploze"
+
+Zabití enemáka ninjou je při dashi, udělá se "exploze" stejná jako při zabití ninjy a enemák zmizí.
+
+Když je ninja trefen střelou nebo padá délé než 240 framů (4 sekundy), tak zemře zmizí a level se restartuje od začátku.
+
+Přidal jsem screenshake na místa, kde je to žádoucí (smrt ninjy, enemáka, dash a apod..)
+
+Upravil jsme přechod mezi levely pomocí black screenu, který vizuálně rozdělí 2 levely a zároveň se v něm načte level další.
+
+Zvýraznil jsem frontend hry řekněme lehkým "stínem".
+
+Přidal jsem zvuky na jump, dash, střelu, smrt a v pozadí.
+
+Když člověk hru dohraje zapne se znovu poslední level.
