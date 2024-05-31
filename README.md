@@ -12,7 +12,7 @@ Zvládnete projít všechny tři levely a zneškodnit všechny nepřátele???
 3. Stáhněte si VŠECHNY soubory hry do jedné složky.
 4. Tuto složku otevřete v programovacím IDE dle vaší volby (VS CODE, Pycharm,...).
 5. Najdete si soubor game.py a spustíte jej.
-6. ZObrazí se vám vyskakovací okno ve kterém by vám měla běžet hra, pokud jste udělali vše správně.
+6. Zobrazí se vám vyskakovací okno ve kterém by vám měla běžet hra, pokud jste udělali vše správně.
 
 ## Ovládání hry
 Hra se ovládá úplně jednodušše. 
