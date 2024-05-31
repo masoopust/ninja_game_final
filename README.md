@@ -1,10 +1,30 @@
 # Můj závěrečný projekt PRG 2023/2024
-Toto je můj výstupní projekt ze třetího ročníku v Python
-
-Plánuji udělat hru za pomocí knihovny Pygame.
+Toto je můj výstupní projekt ze třetího ročníku v Python.
 Jako své výchozí IDE jsem zvolil PyCharm.
 
-## Deník
+Udělal jsem hru, kde ovládáte postavičku malého ninjy, který se snaží zabít všechny nepřátele.
+Jeho jedinou zbraní je jeho rychlý ninja DASH, oproti tomu jeho nepřátele na vás budou střílet ze zbraně.
+Zvládnete projít všechny tři levely a zneškodnit všechny nepřátele???
+
+## Jak spustit hru
+1. Nainstalujte si do svého zařízení Python.
+2. V terminále si nainstalujte knihovnu Pygame za pomocí příkazu "pip install pygame".
+3. Stáhněte si VŠECHNY soubory hry do jedné složky.
+4. Tuto složku otevřete v programovacím IDE dle vaší volby (VS CODE, Pycharm,...).
+5. Najdete si soubor game.py a spustíte jej.
+6. ZObrazí se vám vyskakovací okno ve kterém by vám měla běžet hra, pokud jste udělali vše správně.
+
+## Ovládání hry
+Hra se ovládá úplně jednodušše. 
+POHYB - Ninja se pohybuje pomocí šípek, doprava, doleva a skok. 
+ÚTOK - Útok neboli tzv.dash se provádí pomocí zmáčknutí klávesy X a šipky, udávající směr, do kterého má ninja zaútočit. Po dobu jeho útoku je nesmrtelný a poté má krátký cooldown, aby nemohl útočit furt.
+
+## Cíl hry
+Cílem hry je projít všechny tři připravené levely. Do dalšího levelu se dostanete zabitím všech nepřátel, kteří se budou samozřejmě bránit a budou na vás střílet. Životu máte neomezeně, ovšem když umřete, respawnete se na začátku levelu ve kterém jste umřeli.
+
+
+
+## Pracovní deník
 ### Update 1 (4 hodiny)
 
 Zvolil jsem si nové IDE, se kterým mám nulové zkušenosti na doporučení spolužáka.
